@@ -9,6 +9,8 @@ verify_ssl = true
 selenium = "*"
 pytest = "*"
 python-dotenv = "*"
+allure-pytest = "*"
+pytest-selenium = "*"
 
 [requires]
 python_version = "3.9"
