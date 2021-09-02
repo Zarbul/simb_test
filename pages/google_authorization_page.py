@@ -9,7 +9,7 @@ class Locators:
     LOCATOR_PASSWORD_FIELD = (By.XPATH, "//input[@type='password']")
 
 
-class Authorization(BasePage):
+class AuthHelper(BasePage):
     def enter_email(self, word):
         email_field = self.find_element(Locators.LOCATOR_EMAIL_FIELD)
         email_field.send_keys(word, Keys.RETURN)
