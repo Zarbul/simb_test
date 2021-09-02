@@ -21,9 +21,3 @@ class BasePage:
     def go_to_site(self):
         """Load page ."""
         return self.browser.get(self.base_url)
-
-    def title(self):
-        """Get title."""
-        url = self.browser.current_url
-        WebDriverWait(self.browser, 10).until(EC.url_changes(url))
-        return self.browser.title
