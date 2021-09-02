@@ -17,7 +17,7 @@ def browser():
     options = webdriver.ChromeOptions()
     options.add_argument('--disable-blink-features=AutomationControlled')
     options.add_argument(f'--user-agent={USER_AGENT}')
-    browser = webdriver.Chrome(options=options)
+    browser = webdriver.Chrome(executable_path="./drivers/chromedriver", options=options)
 
     yield browser
     browser.quit()
