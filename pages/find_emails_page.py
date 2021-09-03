@@ -3,7 +3,7 @@ import os
 from dotenv import load_dotenv
 from selenium.webdriver.common.by import By
 
-from base.base import BasePage
+from .base import BasePage
 
 
 load_dotenv()
@@ -14,12 +14,11 @@ class Locators:
     LOCATOR_SEARCH_EMAIL_TITLE = (By.XPATH, f'//span[@class="bqe"][text()="{EMAIL_TITLE}"]')
 
 
-class FindHelper(BasePage):
-    def search_email(self, word):
-        search_email = self.find_element(Locators.LOCATOR_SEARCH_EMAIL_TITLE)
-        return search_email
+class FindEmailHelper(BasePage):
+    def search_email(self):
+        self.find_element(Locators.LOCATOR_SEARCH_EMAIL_TITLE)
 
     def count_emails(self):
         search_emails = self.find_elements(Locators.LOCATOR_SEARCH_EMAIL_TITLE)
-        count_emails = len(search_emails)
+        count_emails = int(len(search_emails) / 2)
         return count_emails
